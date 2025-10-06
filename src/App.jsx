@@ -20,7 +20,7 @@ function App() {
       const player = videojs(
         videoElement,
         {
-          autoplay: true,
+          autoplay: "muted",
           controls: true,
           responsive: true,
           fluid: true,
@@ -35,6 +35,10 @@ function App() {
         },
         () => {
           console.log("Video.js player is ready");
+          // Ensure playback starts
+          player.play().catch((error) => {
+            console.log("Autoplay was prevented:", error);
+          });
         }
       );
 
