@@ -50,3 +50,4 @@ The project uses ESLint 9.x with flat config format:
 - **Language**: JavaScript (ES2020+) with JSX
 - **Dev Server**: Vite with HMR (Hot Module Replacement)
 - **Linting**: ESLint with React-specific plugins
+- don't use your own text when committing
