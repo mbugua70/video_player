@@ -1,42 +1,202 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100dvw;
+  background: linear-gradient(135deg, #84ed62 0%, #19a004 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  background: #000;
+}
+
+.video-container .video-js {
+  width: 100%;
+  height: 100%;
+}
+
+.video-info {
+  margin-top: 24px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.video-description {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.6;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Video.js theme customization */
+.video-js .vjs-big-play-button {
+  background-color: rgba(102, 126, 234, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 48px;
+  transition: all 0.3s ease;
+}
+
+.video-js .vjs-big-play-button:hover {
+  background-color: rgba(102, 126, 234, 1);
+  transform: scale(1.1);
+}
+
+.video-js .vjs-control-bar {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  height: 4em;
+}
+
+.video-js .vjs-play-progress,
+.video-js .vjs-volume-level {
+  background-color: #667eea;
+}
+
+.video-js .vjs-slider {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Devices (Portrait) - 320px to 480px */
+@media only screen and (max-width: 480px) {
+  .video-wrapper {
+    padding: 20px;
+    border-radius: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .video-description {
+    font-size: 0.9rem;
+  }
+
+  .video-js .vjs-big-play-button {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 36px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Mobile Devices (Landscape) & Small Tablets - 481px to 768px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .video-wrapper {
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .video-description {
+    font-size: 1rem;
+  }
+
+  .video-js .vjs-big-play-button {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 42px;
   }
 }
 
-.card {
-  padding: 2em;
+/* Tablets (Portrait) - 769px to 1024px */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .video-wrapper {
+    padding: 35px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+/* Large Screens - 1025px to 1920px */
+@media only screen and (min-width: 1025px) and (max-width: 1920px) {
+  .video-wrapper {
+    max-width: 1600px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* Extra Large Screens - Above 1920px */
+@media only screen and (min-width: 1921px) {
+  .video-wrapper {
+    max-width: 1800px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .video-description {
+    font-size: 1.3rem;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .app-container {
+    padding: 10px;
+  }
+
+  .video-wrapper {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .video-info {
+    margin-top: 10px;
+  }
+
+  .video-description {
+    font-size: 0.8rem;
+  }
 }
